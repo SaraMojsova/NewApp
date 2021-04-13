@@ -8,20 +8,26 @@ import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SnackComponent } from './snack/snack.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChuckapiComponent } from './chuckapi/chuckapi.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ClubmemberComponent,
     MemberDetailComponent,
-    SnackComponent
+    SnackComponent,
+    ChuckapiComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     MatSnackBarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
     
   ],
   entryComponents: [

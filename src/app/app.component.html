@@ -5,4 +5,21 @@
 <button type='button'(click)="openSnackBar()">Open Snackbar</button>
 
 
+<img src="C:\Users\PC\Desktop\chucknorris_logo_coloured_small@2x.png" alt="Chuck Norris Logo" class="logo">
 
+
+<div class="search-content">
+    <input type="text" placeholder="Enter your Search Term">
+    <button type="button">Search</button>
+
+
+    <div class="categories">
+        <span class="category" *ngFor='let category of categories'
+        (click)="searchByCategory(category)">{{category}}</span>
+
+    <div class="joke-wrapper" *ngFor="let joke of jokes">
+        <div class="joke">
+            <img [src]="joke.icon_url" alt="icon">
+            <p>{{joke.value}}</p>
+        </div>
+    </div>
