@@ -5,17 +5,28 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClubmemberComponent } from './clubmember/clubmember.component';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { SnackComponent } from './snack/snack.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClubmemberComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    SnackComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
+    
+  ],
+  entryComponents: [
+    SnackComponent
+
   ],
   providers: [],
   bootstrap: [AppComponent]
