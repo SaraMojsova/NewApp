@@ -15,7 +15,6 @@ export class JokesService {
      return this.http.get(this.apiUrl + 'random')   
     }
 
-
     getCategories(){
         return this.http.get(this.apiUrl+'categories');
     }
