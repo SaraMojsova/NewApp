@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClubComponent } from './club/club.component';
+import { ClubmemberComponent } from './clubmember/clubmember.component';
+import { ClubmembershipsComponent } from './clubmemberships/clubmemberships.component';
+import { MembershipfeesComponent } from './membershipfees/membershipfees.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+    { path: 'clubmember', component: ClubmemberComponent },
+    { path: 'club', component: ClubComponent },
+    { path: 'clubmemberships', component: ClubmembershipsComponent },
+    { path: 'clubmembershipfees', component: MembershipfeesComponent },
+    { path: '**', redirectTo: 'club' },
+  ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
