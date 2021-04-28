@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Member } from '../member';
 import { MEMBERS } from '../mock-members';
+import { MemberService } from '../member.service'
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-clubmember',
@@ -9,18 +11,28 @@ import { MEMBERS } from '../mock-members';
 })
 export class ClubmemberComponent implements OnInit {
 
-  members=MEMBERS;
+  public members!: Member[];
 
   selectedMember?: Member;
 
   
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private MemberService:MemberService){
   }
-  onSelect(member: Member): void {
-    this.selectedMember = member;
+
+  ngOnInit() {
+    this.getMembers()
+  }
+  public getMembers(): void {
+    this.MemberService.getMembers().subscribe(
+      (response: Member[]) => {
+        console.log(response)
+        this.members = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 }
 
