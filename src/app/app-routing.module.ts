@@ -12,7 +12,7 @@ const routes: Routes = [
     { path: 'clubmemberships', component: ClubmembershipsComponent },
     { path: 'clubmembershipfees', component: MembershipfeesComponent },
     { path: 'member-detail', component: MemberDetailComponent },
-    { path: '**', redirectTo: 'club' },
+    // { path: '/', redirectTo: 'club' },
   ];
 
 
