@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { SnackComponent } from './snack/snack.component';
-
+import { ClubMembersService } from './clubmembers';
+import { ProbaService } from './proba.service';
 
 @Component({
   selector: 'app-root',
@@ -9,33 +8,31 @@ import { SnackComponent } from './snack/snack.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  jokes:any[] = [];
-  categories:any[] = [];
-
-  constructor( private snackBar: MatSnackBar ) {}
-
-ngOnInit() {
   
-  subscribe((categories:any) => {
-    this.categories=categories
+  constructor( private proba: ProbaService, private clubmem: ClubMembersService ) {
+     {
+    }
+  }
+ngOnInit(): void {
+  this.getElements();
+  // this.getMembers();
+}
 
+ public getElements(){
+  this.proba.getData().subscribe(getClubs => {
+    console.log(getClubs);
   });
 
-   
-}
+
+
+  
+
+//  public getMembers(){
+//  this.clubmem.getMembers().subscribe(getMembers => {
+//        console.log(getMembers);
+//      });
+
+   }
+
   title = 'Club Members';
-
-
-  openSnackBar() {
-    this.snackBar.openFromComponent(SnackComponent, {
-      duration: 500,
-    });
   }
-      
-  }
-
-
-function subscribe(arg0: (categories: any) => void) {
-  throw new Error('Function not implemented.');
-}
-
