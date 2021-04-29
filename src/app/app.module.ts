@@ -5,12 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClubmemberComponent } from './clubmember/clubmember.component';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
-import { SnackComponent } from './snack/snack.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ClubmembershipsComponent } from './clubmemberships/clubmemberships.component';
 import { ClubComponent } from './club/club.component';
 import { MembershipfeesComponent } from './membershipfees/membershipfees.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -18,10 +18,10 @@ import { MembershipfeesComponent } from './membershipfees/membershipfees.compone
     AppComponent,
     ClubmemberComponent,
     MemberDetailComponent,
-    SnackComponent,
     ClubmembershipsComponent,
     ClubComponent,
     MembershipfeesComponent,
+    HeaderComponent,
     
   ],
   imports: [
@@ -34,7 +34,7 @@ import { MembershipfeesComponent } from './membershipfees/membershipfees.compone
     
   ],
   entryComponents: [
-    SnackComponent
+    
 
   ],
   providers: [],
