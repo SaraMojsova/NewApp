@@ -4,8 +4,19 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Join Us</a>
+      <!-- <a class="navbar-brand" href="#">Join Us</a> -->
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown" appDropDown>
+            <a href="#" class="dropdown-toggle" role="button">Join us <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Register</a></li>
+            </ul>
+          </li> 
+        </ul>
+
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -16,11 +27,49 @@
           <li class="nav-item">
             <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Payment</a>
           </li>
+          <li>
+            <a class="nav-link" href="#" routerLink="/club">Clubs </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#" routerLink="/clubmember">Club Members </a>
+          </li>
+          <li>
+            <a class="nav-link" href="#" routerLink="/membershipfees">Membership Fees </a>
+          </li>
+<!--  -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Options
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+<!--  -->
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search Member</button>
         </form>
+
+        <!--  -->
+        <!-- <mat-form-field style="margin-left:20px;" name="loginRegisterDropdown">
+          <mat-select placeholder="Login" (selectionChange)="navigateTo($event.value)">
+            <mat-option *ngFor="let entry of entries"[value]="entry.link">
+                {{entry.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+        <!--  -->
+ 
+   
       </div>
     </div>
   </nav>
+
+
+
+  

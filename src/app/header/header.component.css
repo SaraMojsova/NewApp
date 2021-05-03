@@ -5,3 +5,7 @@ h1 {
   color: white;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
+mat-form-field, mat-select {
+  color: white;
+}

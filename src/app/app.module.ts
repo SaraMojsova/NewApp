@@ -11,6 +11,12 @@ import { ClubmembershipsComponent } from './clubmemberships/clubmemberships.comp
 import { ClubComponent } from './club/club.component';
 import { MembershipfeesComponent } from './membershipfees/membershipfees.component';
 import { HeaderComponent } from './header/header.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+// import { WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md'
+import{MatTableModule} from '@angular/material/table';
+import { DropdownDirective } from './dropdown.directive';
 
 
 @NgModule({
@@ -22,6 +28,8 @@ import { HeaderComponent } from './header/header.component';
     ClubComponent,
     MembershipfeesComponent,
     HeaderComponent,
+    DropdownDirective
+    
     
   ],
   imports: [
@@ -30,7 +38,10 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    
+    MatMenuModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatTableModule
     
   ],
   entryComponents: [
