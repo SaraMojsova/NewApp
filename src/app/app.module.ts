@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClubmemberComponent } from './clubmember/clubmember.component';
@@ -17,6 +17,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 // import { WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md'
 import{MatTableModule} from '@angular/material/table';
 import { DropdownDirective } from './dropdown.directive';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
@@ -28,7 +32,11 @@ import { DropdownDirective } from './dropdown.directive';
     ClubComponent,
     MembershipfeesComponent,
     HeaderComponent,
-    DropdownDirective
+    DropdownDirective,
+    RegisterComponent,
+    LoginComponent,
+    HomeComponent,
+    NavigationComponent
     
     
   ],
@@ -41,7 +49,8 @@ import { DropdownDirective } from './dropdown.directive';
     MatMenuModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule
     
   ],
   entryComponents: [
