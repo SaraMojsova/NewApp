@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,8 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
     ) {
 
      }
@@ -23,10 +25,15 @@ export class RegisterComponent implements OnInit {
     password:''
     });
   }
+
+  
   submit(): void {
-    console.log(this.form.getRawValue())
-    this.http.get('http://localhost:8000')
+    this.http.post('http://localhost:8080/api/members', this.form.getRawValue()) 
+    .subscribe( res => this.router.navigate(['login']))
+  {
 
   }
+    }
+  }
 
-}
+

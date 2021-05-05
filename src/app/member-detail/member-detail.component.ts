@@ -43,8 +43,10 @@ export class MemberDetailComponent implements OnInit {
         console.log(response)
         this.members = response;
       },
+      
       (error: HttpErrorResponse) => {
         alert(error.message);
+        
       }
     );
   }
