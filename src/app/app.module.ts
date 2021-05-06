@@ -17,10 +17,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 // import { WavesModule, ButtonsModule, IconsModule } from 'angular-bootstrap-md'
 import{MatTableModule} from '@angular/material/table';
 import { DropdownDirective } from './dropdown.directive';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { NavigationComponent } from './navigation/navigation.component';
+
+import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './loading/loading-spinner.component';
+
+
 
 
 @NgModule({
@@ -33,10 +35,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     MembershipfeesComponent,
     HeaderComponent,
     DropdownDirective,
-    RegisterComponent,
-    LoginComponent,
     HomeComponent,
-    NavigationComponent
+    AuthComponent,
+    LoadingSpinnerComponent,
     
     
   ],
