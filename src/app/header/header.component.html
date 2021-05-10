@@ -1,4 +1,4 @@
-<h1>ROCKET CLUB</h1>
+<h1>ROCKET CLUB MANAGEMENT </h1>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -8,7 +8,7 @@
       <!-- <a class="navbar-brand" href="#">Join Us</a> -->
       <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 
-        <ul class="nav navbar-nav navbar-right">
+        <!-- <ul class="nav navbar-nav navbar-right">
           <li class="dropdown" appDropDown>
             <a href="#" class="dropdown-toggle" role="button">Join us <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -16,7 +16,7 @@
               <li><a href="#">Register</a></li>
             </ul>
           </li> 
-        </ul>
+        </ul> -->
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -26,26 +26,31 @@
             <a class="nav-link" href="#">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Payment</a>
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" *ngIf="isAuthenticated">Payment</a>
           </li>
           <li>
-            <a class="nav-link" href="#" routerLink="/club">Clubs </a>
+            <a class="nav-link" href="#" routerLink="/club" *ngIf="isAuthenticated">Clubs </a>
           </li>
           <li>
-            <a class="nav-link" href="#" routerLink="/clubmember">Club Members </a>
+            <a class="nav-link" href="#" routerLink="/clubmember" *ngIf="isAuthenticated">Club Members </a>
           </li>
           <li>
-            <a class="nav-link" href="#" routerLink="/membershipfees">Membership Fees </a>
+            <a class="nav-link" href="#" routerLink="/membershipfees" *ngIf="isAuthenticated">Membership Fees </a>
           </li>
           <li>
-            <a routerLink="/auth" class="nav-link" aria-current="page">Authenticate</a>
+            <a routerLink="/auth" class="nav-link" aria-current="page" *ngIf="!isAuthenticated">Authenticate</a>
           </li>
+          
+          
+           <li *ngIf="isAuthenticated">
+             <a (click)="onLogout()">Logout </a>
+           </li>
+        
           
 
 
-
 <!--  -->
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Options
             </a>
@@ -55,14 +60,17 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-          </li>
+          </li> -->
 <!--  -->
-        </ul>
+        </ul >
+
+        
+
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search Member</button>
         </form>
-
+        
         <!--  -->
         <!-- <mat-form-field style="margin-left:20px;" name="loginRegisterDropdown">
           <mat-select placeholder="Login" (selectionChange)="navigateTo($event.value)">

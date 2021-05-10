@@ -9,3 +9,7 @@ h1 {
 mat-form-field, mat-select {
   color: white;
 }
+
+a{
+  cursor: pointer;
+}
