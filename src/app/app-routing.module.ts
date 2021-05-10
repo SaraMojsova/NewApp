@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/auth.guard';
 import { ClubComponent } from './club/club.component';
 import { ClubmemberComponent } from './clubmember/clubmember.component';
 import { ClubmembershipsComponent } from './clubmemberships/clubmemberships.component';
@@ -11,7 +12,9 @@ import { MembershipfeesComponent } from './membershipfees/membershipfees.compone
 
 
 const routes: Routes = [
-    { path: 'clubmember', component: ClubmemberComponent },
+    { path: 'clubmember', component: ClubmemberComponent,
+      canActivate:[AuthGuard]
+    },
     { path: 'club', component: ClubComponent },
     { path: 'clubmemberships', component: ClubmembershipsComponent },
     { path: 'membershipfees', component: MembershipfeesComponent },
