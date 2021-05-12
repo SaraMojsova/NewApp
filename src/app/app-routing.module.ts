@@ -6,7 +6,6 @@ import { ClubComponent } from './club/club.component';
 import { ClubmemberComponent } from './clubmember/clubmember.component';
 import { ClubmembershipsComponent } from './clubmemberships/clubmemberships.component';
 import { HomeComponent } from './home/home.component';
-
 import { MemberDetailComponent } from './member-detail/member-detail.component';
 import { MembershipfeesComponent } from './membershipfees/membershipfees.component';
 
@@ -21,6 +20,7 @@ const routes: Routes = [
     { path: 'member-detail', component: MemberDetailComponent },
     { path:'', component:HomeComponent},
     {path:'auth',component:AuthComponent},
+    { path: 'home', component:HomeComponent}
     // { path: '/', redirectTo: 'club' },
   ];
 

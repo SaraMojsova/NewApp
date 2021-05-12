@@ -25,7 +25,7 @@ export class AuthService {
 
 
     signup(email: string, password: string){
-        return this.http.get<AuthResponseData>('https://localhost:8080/api/members'
+        return this.http.get<any>('http://localhost:8080/api/members'
 
         
         ).pipe(catchError(this.handleError), 
@@ -34,11 +34,12 @@ export class AuthService {
         })); 
 }
     
-        login(email:string, password:string){
-           return this.http.get<AuthResponseData>('https://localhost:8080/api/login')
+        login(login){
+           return this.http.post<any>('http://localhost:8080/api/login', login )
            .pipe(catchError(this.handleError),
             tap(resData =>{
-            this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
+                console.log(resData);
+            // this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
          }));
     }
 
