@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  testApi : 'https://jsonplaceholder.typicode.com/',
+  production: false,
+  apiUrl: 'http://localhost:8080',
+  token: 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsanViaWNhIiwiZXhwIjoxNjIwMTYzMzI5LCJpYXQiOjE2MjAxNjMyNjl9.DVAgqK9XIFTqwv--wh62oxWtdQ4BRbaIoR6rEG98XT1tpCzRqp9UN56r4rsm7CpXn-xM0xEuGvoP9sjKMlPeOQ'
 };
 
 /*
