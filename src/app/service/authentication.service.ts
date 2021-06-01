@@ -4,6 +4,7 @@ import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { TokenService } from '../token.service';
 
 
 @Injectable({
@@ -11,19 +12,21 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthenticationService {
 
-private host = environment.apiUrl;
-  private token: any;
+public host = environment.apiUrl;
+  private token:any;
   private loggedInUsername: any;
   private jwtHelper = new JwtHelperService();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    // this.token='';
+   }
 
-  public login(user: User): Observable<HttpResponse<any> | HttpErrorResponse> {
-    return this.http.post<HttpResponse<any> | HttpErrorResponse>(`${this.host}/user/login`, user, {observe: 'response'});
+  public login(user: User): Observable<HttpResponse<User> | HttpErrorResponse> {
+    return this.http.post<HttpResponse<User> | HttpErrorResponse>(`${this.host}/api/login`, user, {observe: 'response'});
   }
 
   public register(user: User): Observable<User | HttpErrorResponse> {
-    return this.http.post<User | HttpErrorResponse>(`${this.host}/user/register`, user);
+    return this.http.post<User | HttpErrorResponse>(`${this.host}/api/register`, user);
   }
 
   public logOut(): void {
@@ -54,7 +57,7 @@ public getToken(): string {
   return this.token;
 
 }
-public isLoggedIn(): any {
+public isUserLoggedIn(): any {
   this.loadToken();
   if (this.token != null && this.token !== ''){
     if (this.jwtHelper.decodeToken(this.token).sub != null || '') {
