@@ -1,1 +1,3 @@
 Bojan i Sara Angular Project
+
+Club management app where the user should login, navigate to another page, be able to see data (from the backend)...
